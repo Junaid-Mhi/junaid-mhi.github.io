@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Device Screen Test</title>
+</head>
+<body>
+
+<h2>Device Information</h2>
+
+<p>Viewport Width: <span id="width"></span> px</p>
+<p>Viewport Height: <span id="height"></span> px</p>
+<p>Screen Width: <span id="screenWidth"></span> px</p>
+<p>Screen Height: <span id="screenHeight"></span> px</p>
+<p>Pixel Ratio: <span id="pixelRatio"></span></p>
+<p>Orientation: <span id="orientation"></span></p>
+
+<script>
+function showInfo() {
+    document.getElementById('width').textContent = window.innerWidth;
+    document.getElementById('height').textContent = window.innerHeight;
+
+    document.getElementById('screenWidth').textContent = screen.width;
+    document.getElementById('screenHeight').textContent = screen.height;
+
+    document.getElementById('pixelRatio').textContent = window.devicePixelRatio;
+
+    document.getElementById('orientation').textContent =
+        screen.orientation.type;
+}
+
+showInfo();
+
+window.addEventListener('resize', showInfo);
+</script>
+
+</body>
+</html>
